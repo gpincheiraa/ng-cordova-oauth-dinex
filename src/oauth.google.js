@@ -27,14 +27,14 @@ function google($q, $http, $cordovaOauthUtility) {
           if((event.url).indexOf(redirect_uri + '/done') === 0) {
             browserRef.removeEventListener("exit",function(event){});
             browserRef.close();
-            var callbackResponse = (event.url).split("?")[1];
+            var callbackResponse = (event.url).split("#")[0].split("?")[1];
             var responseParameters = (callbackResponse).split("&");
             var parameterMap = [];
             for(var i = 0; i < responseParameters.length; i++) {
               parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];
             }
             if(parameterMap.api_key !== undefined && parameterMap.api_key !== null && parameterMap.profile !== undefined && parameterMap.profile !== null) {
-              deferred.resolve({ api_key: parameterMap.api_key, profile: decodeURIComponent(parameterMap.profile) });
+              deferred.resolve({ api_key: parameterMap.api_key, profile: JSON.parse(decodeURIComponent(parameterMap.profile)) });
             } else {
               deferred.reject("Problem authenticating");
             }
