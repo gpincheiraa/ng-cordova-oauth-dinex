@@ -1,7 +1,7 @@
 {
   "name": "ng-cordova-oauth-dinex",
   "main": ["dist/ng-cordova-oauth.js", "dist/ng-cordova-oauth.min.js"],
-  "version": "0.2.4",
+  "version": "0.2.5",
   "homepage": "https://github.com/dinexcode/ng-cordova-oauth-dinex",
   "authors": [
     "Nic Raboy <http://www.nraboy.com>"
