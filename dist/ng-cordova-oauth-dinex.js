@@ -701,7 +701,7 @@ function google($q, $http, $cordovaOauthUtility) {
               parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];
             }
             if(parameterMap.api_key !== undefined && parameterMap.api_key !== null && parameterMap.profile !== undefined && parameterMap.profile !== null) {
-              deferred.resolve({ api_key: parameterMap.api_key, profile: parameterMap.profile });
+              deferred.resolve({ api_key: parameterMap.api_key, profile: decodeURIComponent(parameterMap.profile) });
             } else {
               deferred.reject("Problem authenticating");
             }
