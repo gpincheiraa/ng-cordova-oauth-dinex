@@ -40,7 +40,7 @@ angular.module("oauth.providers", [
 
 function cordovaOauth(
   $q, $http, $cordovaOauthUtility, $azureAD, $adfs, $dropbox, $digitalOcean,
-  $google, $github, $facebook, $linkedin, $instagram, $box, $reddit, $slack,
+  $google, $github, $ngFacebookOauth, $linkedin, $instagram, $box, $reddit, $slack,
   $twitter, $meetup, $salesforce, $strava, $withings, $foursquare, $magento,
   $vkontakte, $odnoklassniki, $imgur, $spotify, $uber, $windowslive, $yammer,
   $venmo, $stripe, $rally, $familySearch, $envato, $weibo, $jawbone, $untappd,
@@ -53,7 +53,7 @@ function cordovaOauth(
     digitalOcean: $digitalOcean.signin,
     google: $google.signin,
     github: $github.signin,
-    facebook: $facebook.signin,
+    facebook: $ngFacebookOauth.signin,
     linkedin: $linkedin.signin,
     instagram: $instagram.signin,
     box: $box.signin,
@@ -94,7 +94,7 @@ cordovaOauth.$inject = [
   '$digitalOcean',
   '$google',
   '$github',
-  '$facebook',
+  '$ngFacebookOauth',
   '$linkedin',
   '$instagram',
   '$box',
