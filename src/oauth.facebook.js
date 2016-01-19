@@ -29,7 +29,7 @@
           if(options !== undefined && options.hasOwnProperty("auth_type")) {
             flowUrl += "&auth_type=" + options.auth_type;
           }
-          var browserRef = window.open(flowUrl, '_blank', 'location=no,clearsessioncache=yes,clearcache=yes');
+          var browserRef = window.open(flowUrl, '_blank', 'location=yes,clearsessioncache=yes,clearcache=yes');
           browserRef.addEventListener("loadstart", function(event) {
             if((event.url).indexOf(redirect_uri + '/done') === 0) {
               browserRef.removeEventListener("exit",function(event){});
